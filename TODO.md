@@ -1,0 +1,2 @@
+- [ ] tagging via the browser?
+- [ ] figure out multiple/nested directory handling (current test catalog only uses flat dirs)

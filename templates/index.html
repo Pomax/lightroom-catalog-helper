@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block styles %}
+  <link rel="stylesheet" href="/css/index.css" />
+{% endblock %}
+
+{% block scripts %}
+  <script src="/js/index.js" defer></script>
+{% endblock %}
+
+{% block title %}
+  <h1><a href="/">Lightroom catalog helper</a></h1>
+{% endblock %}
+
+{% block content %}
+  <section id="metadata">
+    <h2>
+      Using catalog: <code>{{ lrcat }}</code>
+      <span class="filecount">({{ files|length }} files)</span>
+    </h2>
+  </section>
+
+  {% if keywords|length > 0 %}
+  <section id="keywords">
+    <h2>Browse the keywords</h2>
+    <p>
+      Pick a keyword:
+      <select class="keywords">
+        <option></option>
+        {% for entry in keywords %}
+        <option value="{{ entry.name }}"
+          >{{ entry.name }} ({{ entry.count }})</option
+        >
+        {% endfor %}
+      </select>
+    </p>
+    <p>or browse the <a href="untagged">untagged</a> collection.</p>
+  </section>
+  {% endif %}
+
+  {% if collections|length > 0 %}
+  <section id="collections">
+    <h2>Browse the collections</h2>
+    <p>
+      Pick a collection:
+      <select class="collections">
+        <option></option>
+        {% for word in collections %}
+        <option value="{{word}}">{{word}}</option>
+        {% endfor %}
+      </select>
+    </p>
+  </section>
+  {% endif %}
+
+  <section id="orphans">
+    {% if orphans %}
+    <h2>Manage orphans</h2>
+    <p>Pick an operation:</p>
+    <ul>
+      <li>
+        <a href="/orphaned">View orphaned images</a> ({{ orphans|length }} files)
+      </li>
+      <li><a href="/orphaned/archive">Archive orphans</a></li>
+      <li><a href="/orphaned/delete" class="delete">Delete all orphans</a></li>
+    </ul>
+    {% else %}
+    <p>
+      <button class="load">load with orphan management</button> (warning: this can
+      take quite a long time!)
+    </p>
+    {% endif %}
+  </section>
+{% endblock %}

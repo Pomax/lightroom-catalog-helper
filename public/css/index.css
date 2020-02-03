@@ -1,0 +1,18 @@
+h1 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+section {
+  border: 1px solid lightgray;
+  margin: 1em;
+  padding: 1em;
+}
+
+.filecount {
+  font-size: 0.8em;
+  font-family: verdana;
+  font-weight: normal;
+  color: #a9b;
+  opacity: 0.4;
+}

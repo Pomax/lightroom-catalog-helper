@@ -1,0 +1,31 @@
+html, body, img {
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+h3 {
+    color: white;
+    top: calc(50vh - 1.5em);
+    position: relative;
+    text-align: center;
+}
+
+#start {
+    width: 10rem;
+    height: 3rem;
+    margin: auto;
+    position: relative;
+    top: 50%;
+    left: calc(50% - 5rem);
+    font-size: 2em;
+    background: purple;
+    border: 2px solid gold;
+    border-radius: 0.25rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block styles %}
+  <link rel="stylesheet" href="/css/list-page.css" />
+{% endblock %}
+
+{% block scripts %}
+  <script src="/js/list-page.js" defer></script>
+{% endblock %}
+
+{% block title %}
+  <header>
+    <a class="nav-btn back" href="/">← back</a>
+    <a class="nav-btn slideshow" href="./slideshow">slideshow</a>
+    <h1>
+      {{ count }} {% if keyword %}images for keyword "{{ keyword }}"{% elif
+      orphaned %}orphaned images found{%else %}untagged images{% endif%}
+    </h1>
+    <h2>View this set <a href="./list">as file list</a></h2>
+  </header>
+{% endblock %}
+
+{% block content %}
+  <section id="images">
+    {% for filename in images %}
+    <a class="container" title="{{ loop.index }}" href="/image/{{ filename }}" target="_blank">
+      <img data-src="/image/{{ filename }}">
+    </a>
+    {% endfor %}
+  </section>
+{% endblock %}

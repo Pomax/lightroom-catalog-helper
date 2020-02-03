@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block styles %}
+  <link rel="stylesheet" href="/css/slideshow.css" />
+{% endblock %}
+
+{% block content %}
+    <h3>Click anywhere on this page to start this slideshow</h3>
+    <script>
+        const SLIDESHOW_INTERVAL = {{ timeout }};
+
+        const files = [
+            {% for file in files %}`{{ file }}`,
+            {% endfor %}
+        ];
+     </script>
+    <script src="/js/slideshow.js"></script>
+{% endblock %}

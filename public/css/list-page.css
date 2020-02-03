@@ -1,0 +1,83 @@
+.nav-btn {
+  position: absolute;
+  top: 0.5em;
+  padding: 0 0.3em;
+  color: white;
+  font-family: Arial;
+  font-weight: bold;
+  text-decoration: none;
+  border: 1px solid white;
+  border-radius: 3px;
+  background: #444;
+  padding: 3px 10px;
+}
+
+.nav-btn.back {
+  left: 1em;
+}
+
+.nav-btn.slideshow {
+  right: 1em;
+}
+
+h2 {
+  padding-left: 2em;
+}
+
+.container {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  height: 200px;
+  width: 200px;
+  margin: 1em;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.container::before {
+  content: attr(title);
+  position: absolute;
+  display: inline-block;
+  width: 200px;
+  top: 100px;
+  text-align: center;
+  font-family: Helvetica;
+  font-size: 2rem;
+  line-height: 1rem;
+  z-index: 1;
+}
+
+.container.loading {
+  background: antiquewhite;
+}
+
+.container.loading::before {
+  content: "loading...";
+}
+
+.container.error {
+  background: pink;
+}
+
+.container.error::before {
+  content: "error";
+}
+
+.container img {
+  width: 100%;
+  height: 100%;
+  box-shadow: 5px 5px 5px 0 transparent;
+  align-self: center;
+}
+
+.container.loaded img {
+  background: grey;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  box-shadow: 5px 5px 5px 0 gray;
+  position: relative;
+  z-index: 2;
+}

@@ -1,0 +1,23 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  position: relative;
+}
+
+h1 {
+  font-family: Helvetica;
+  text-align: center;
+  background: grey;
+  color: white;
+  margin-top: 0;
+}
+
+input[type="file"][webkitdirectory][directory][multiple] {
+  width: 6em;
+  font-size: 12px;
+  font-family: Arial;
+}
