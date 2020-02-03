@@ -8,13 +8,21 @@ Turns out: sometimes the best way to use Lightroom is to bypass Lightroom.
 
 ## How to use this helper
 
-This is a browser-based helper utility that uses [node.js](https://nodejs.org), and can be invoked as:
+This is a browser-based helper utility that uses [node.js](https://nodejs.org), which I would **strongly recommend** installing using [nvm-sh](https://github.com/nvm-sh/nvm) on Linux/MacOS, or [nvm-windows](https://github.com/coreybutler/nvm-windows#install-nvm-windows) on Windows. Do not use the website's own installer, or a community PPA, or even `brew`.
+
+With Node.js installed, [clone this repo](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository) (or fork it to your own account, and then clone that instead) or [downloading and unpacking](https://github.com/Pomax/lightroom-catalog-helper/archive/master.zip), you will need to install the required Node dependencies using:
 
 ```
-node index.js -p 8080 -c "the/path/for/your/catalog.lrcat"
+npm start -- -p 8080 -c "the/path/for/your/catalog.lrcat"
 ```
 
-With the following supported flags:
+The main part in this command is `npm start`, with `--` indicating that we're going to pass some runtime flags, followed by (in the above standard call example) the runtime flags for port number and catalog filepath.
+
+**note**: this might take a bit longer the first time you do so, because it will check that all dependencies are installed, and install them—*locally*, not globally—prior to running the utility.
+
+### runtime flags
+
+The following runtime flags are supported:
 
 flag | description
 -|-
@@ -26,9 +34,12 @@ Note that you want `/` for the path to your catalog file. Even on Windows, just 
 
 ## Supported tasks
 
-- List all keywords know to your catalog (as pull-down list)
+- List all keywords known to your catalog (as pull-down list)
 - View all images for a specific keyword (as image gallery, randomised slideshow, or filename list)
 - View all untagged images (as image gallery, randomised slideshow, or filename list)
+
+- List all collections known to your catalog (as pull-down list)
+- View all images for a specific collection (as image gallery, randomised slideshow, or filename list)
 
 ### Orphan management
 
@@ -39,3 +50,9 @@ The following orphaned image (images found on disk, but not in catalog) operatio
 - delete orphans, with a confirmation warning to stop you from accidentally running this.
 
 Note that by default, the browser will open a page that has orphan management turned off, because in order for orphan management to work, the helper needs to do a file system scan to find all filenames, then remove all filenames that exist in the catalog from that set. Depending on how many files your catalog is for, how fast your drives are, and how fast your cpu is, this can a bit of time to build.
+
+## Supported image formats
+
+- This helper utility supports `png` and `jpg` images without any issue.
+- `TIFF` images are supported via a jpg conversion pass, using [sharp](https://github.com/lovell/sharp).
+- RAW files supported through [dcraw.js](https://github.com/zfedoran/dcraw.js) (which converts RAW to TIFF). RAW conversions are cached into a directory called **`temp`**, which can be safely deleted if you want to save some space - as long as you remember that it _will_ get rebuilt and filled back up with previews/conversion intermediaries whenever you use this tool.
