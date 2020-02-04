@@ -2,7 +2,9 @@
 
 Even worked in Adobe Lightroom Classic and wanted to see a list of orphaned images (they're in your filesystem, but they're not in your catalog for wahtever reason) without syncing folders? Or generate a .txt file with full-path filenames of all images tagged with a specific keyword?
 
-If you have, you probably discovered that Lightroom is really, really bad at things that should be really, really easy so in order to make those things easy, this helper exists. The Lightroom catalog file is actually a [sqlite v3](https://sqlite.org) database file, and everything that Lightroom can do, you can _technically_ do by hand as long as you know how to write SQL statements. For some things, like retouch operations, figuring out the SQL statements required are an otherworldly amount of work, but for things like "finding all images for a specific keyword" or "checking for orphans", the SQL statements are surprisingly simple, and run in milliseconds. Even when Lightroom would take a minute or more to run the same operation (if it can run it at all).
+If you have, you probably discovered that Lightroom is really, really bad at things that should be really, really easy so in order to make those things easy, this helper exists. The Lightroom catalog file is actually a [sqlite v3](https://sqlite.org) database file, and everything that Lightroom can do, you can _technically_ do by hand as long as you know how to write SQL statements.
+
+For some things, like retouch operations, figuring out the SQL statements required is an otherworldly amount of work, but for things like "finding all images for a specific keyword" or "checking for orphans", the SQL statements are surprisingly simple, and run in milliseconds. Even when Lightroom would take a minute or more to run the same operation (if it can run it at all).
 
 Turns out: sometimes the best way to use Lightroom is to bypass Lightroom.
 
