@@ -12,10 +12,10 @@ Turns out: sometimes the best way to use Lightroom is to bypass Lightroom.
 
 This is a browser-based helper utility that uses [node.js](https://nodejs.org), which I would **strongly recommend** installing using [nvm-sh](https://github.com/nvm-sh/nvm) on Linux/MacOS, or [nvm-windows](https://github.com/coreybutler/nvm-windows#install-nvm-windows) on Windows. Do not use the website's own installer, or a community PPA, or even `brew`.
 
-With Node.js installed, [clone this repo](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository) (or fork it to your own account, and then clone that instead) or [downloading and unpacking](https://github.com/Pomax/lightroom-catalog-helper/archive/master.zip), you will need to install the required Node dependencies using:
+With Node.js installed, [clone this repo](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository) (or fork it to your own account, and then clone that instead) or [downloading and unpack it](https://github.com/Pomax/lightroom-catalog-helper/archive/master.zip), then run the helper from its directory by using
 
 ```
-npm start -- -p 8080 -c "the/path/for/your/catalog.lrcat"
+lightroom-catalog-helper> npm start -- -p 8080 -c "the/path/for/your/catalog.lrcat"
 ```
 
 The main part in this command is `npm start`, with `--` indicating that we're going to pass some runtime flags, followed by (in the above standard call example) the runtime flags for port number and catalog filepath.
