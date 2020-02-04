@@ -32,7 +32,9 @@ flag | description
 `-c` | The path to your catalog file
 `-ns` | Do not automatically open "your default browser"
 
-Note that you want `/` for the path to your catalog file. Even on Windows, just use `/` (Windows has suported `/` path delimiting literally since it was a DOS application). This means that if your catalog is **`C:\Users\You\Documents\my-catalog.lrcat`**, you specify it as **`C:/Users/You/Documents/my-catalog.lrcat`** instead.
+Note that you want to use `/` as path delimiter for the path to your catalog file. Even on Windows. (Windows has suported `/` path delimiting literally since it was a DOS application).
+
+This means that if your catalog is **`C:\Users\You\Documents\my-catalog.lrcat`**, you specify it as **`C:/Users/You/Documents/my-catalog.lrcat`** instead.
 
 ## Supported tasks
 
