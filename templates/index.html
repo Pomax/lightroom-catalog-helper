@@ -58,11 +58,14 @@
     <h2>Manage orphans</h2>
     <p>Pick an operation:</p>
     <ul>
-      <li>
-        <a href="/orphaned">View orphaned images</a> ({{ orphans|length }} files)
-      </li>
+      <li><a href="/orphaned">View orphaned images</a> ({{ orphans|length }} files)</li>
       <li><a href="/orphaned/archive">Archive orphans</a></li>
       <li><a href="/orphaned/delete" class="delete">Delete all orphans</a></li>
+      {% if missing|length > 0 %}
+      <li><a href="/missing/remove">Remove {{ missing|length }} missing image records from catalogue</a></li>
+      {% else %}
+      <li>(there are no image records with missing files to fix)</li>
+      {% endif %}
     </ul>
     {% else %}
     <p>
@@ -71,4 +74,8 @@
     </p>
     {% endif %}
   </section>
+{% endblock %}
+
+{% block footer %}
+  <form action="/shutdown" method="post"><button>Shut down server</button></form>
 {% endblock %}

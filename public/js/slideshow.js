@@ -18,8 +18,15 @@ function loadRandomImage(reverse) {
 
 // forward/back key handling
 document.addEventListener("keydown", evt => {
-  if (evt.keyCode == 37) loadRandomImage(true);
-  if (evt.keyCode == 39) loadRandomImage();
+  if (evt.keyCode === 37) loadRandomImage(true);
+  if (evt.keyCode === 39) loadRandomImage();
+});
+
+// exit
+document.addEventListener("fullscreenchange", evt => {
+  if (!document.fullscreenElement) {
+    window.location = "..";
+  }
 });
 
 // full screen requires user interaction, unfortunately
