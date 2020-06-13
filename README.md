@@ -55,6 +55,15 @@ The following orphaned image (images found on disk, but not in catalog) operatio
 
 Note that by default, the browser will open a page that has orphan management turned off, because in order for orphan management to work, the helper needs to do a file system scan to find all filenames, then remove all filenames that exist in the catalog from that set. Depending on how many files your catalog is for, how fast your drives are, and how fast your cpu is, this can a bit of time to build.
 
+## Unsupported features
+
+- catalogues with directory trees
+- catalogues with multiple root directories
+
+:warning: note :warning:
+
+I will be happy to implement these features, but I don't personally need them and so working on them will be time lost that could have been spent on other work. As such, you can sponsor this work, or if you don't want to spend money, but you do know how to program and are willing to spend effort instead, I'll be more than happy to discuss the work in an issue and review PRs
+
 ## Supported image formats
 
 - This helper utility supports `png` and `jpg` images without any issue.
