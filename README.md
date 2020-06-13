@@ -4,7 +4,7 @@ Ever worked in Adobe Lightroom Classic and wanted to see a list of orphaned imag
 
 If you have, you probably discovered that Lightroom is really, really bad at things that should be really, really easy so in order to make those things easy, this helper exists. The Lightroom catalog file is actually a [sqlite v3](https://sqlite.org) database file, used as [application file format](https://sqlite.org/appfileformat.html), and everything that Lightroom can do, you can _technically_ do by hand as long as you know how to write SQL statements, or have a decent db connector available in your favourite programming language.
 
-For some things, like retouch operations, figuring out the SQL statements required is an otherworldly amount of work, but for things like "finding all images for a specific keyword" or "checking for orphans", the SQL statements are surprisingly simple, and run in milliseconds. Even when Lightroom would take a minute or more to run the same operation (if it can run it at all).
+For some things, like retouch operations, figuring out the SQL statements required can take a bit of work (typically by copying the db, running the operation in app, copying the updated db, and then [diffing the two to see what changed](https://www.sqlite.org/sqldiff.html)), but for things like "finding all images for a specific keyword" or "checking for orphans", the SQL statements are surprisingly simple, and run in milliseconds. Even when Lightroom would take a minute or more to run the same operation (if it can run it at all).
 
 Turns out: sometimes the best way to use Lightroom is to bypass Lightroom.
 
