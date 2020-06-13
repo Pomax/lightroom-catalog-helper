@@ -58,7 +58,7 @@ Note that by default, the browser will open a page that has orphan management tu
 ## Unsupported features
 
 - catalogues with directory trees: https://github.com/Pomax/lightroom-catalog-helper/issues/1
-- catalogues with multiple root directories: https://github.com/Pomax/lightroom-catalog-helper/issues/2
+- catalogues with multiple root directories: https://github.com/Pomax/lightroom-catalog-helper/issues/3
 
 :warning:&nbsp;NOTE:warning:
 
